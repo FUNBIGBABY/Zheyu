@@ -1,0 +1,409 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*.bg {
+    position: absolute;
+    width: 1112px;
+    height: 784px;
+}
+*/
+.chat_layout{
+ /* opacity: 0.6;  */
+    display: flex;
+    width: 1112px;
+    height: 784px;
+    background-color: #f7f7f7;
+}
+
+*,
+*::before
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 第一部分，菜单栏*/
+.menu {
+    width: 60px;
+    height: 100%;
+    background-color: #e0dee3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.top_left_icons {
+    display: flex;
+    width:60px;
+    height: 40px;
+    justify-content: flex-start;
+    gap:8px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.top_left_icon_red_circle {
+    background-color: #ed6a5e;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.top_left_icon_blue_circle{
+    background-color: #61c654;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.top_left_icon_green_circle{
+    background-color: #f4bf4f;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.user_profile {
+    width: 60px;
+    height: 40px;
+    padding: 4px;
+    margin-top: 7px;
+    margin-left: 1px;
+}
+
+.user_img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.user_img img{
+    width: 100%;
+    height: 100%;
+}
+.menu_list_icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+    margin-top:17px;
+    width: 100%;
+}
+
+.icons{
+    width: 30px;
+    height: 30px;
+    margin: 9px;
+    position: relative;
+}
+
+.icons img{
+    width: 90%;
+    height: 90%;
+}
+
+/* 朋友圈右上角的红色1*/
+/* position: absolute确保根据对应的relative进行定位，否则红色1会定位在当前icons的右边从而无法进行覆盖*/
+.notification{
+    position: absolute; 
+    display: flex;
+    top: -5px;
+    right: -5px;
+    width: 19px;
+    height: 19px;
+    background-color: #de4747;
+    color: #e5e5e5;
+    font-weight: bold;
+    font-size: 10px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.botton_menu_icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 117px;
+    width: 100%;
+}
+
+.botton_menu_icons{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 27px;
+}
+
+.botton_menu_icons img{
+    width: 92%;
+    height: 92%;
+}
+
+
+
+/* 第二部分，聊天list*/
+.chat_list_section {
+    width: 261px; 
+    height: 784px; 
+    border-right: 2px solid #e2e2e2;
+}
+
+.search_area {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    margin-top: 15px;
+    margin-left: 7px;
+}
+
+.search_bar {
+    display: flex;
+    align-items: center;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    padding:  5px 24px;
+    margin-right: 7px; 
+    margin-left: 7px;
+    height: 13px;
+    position: relative;
+    border-color: transparent;
+}
+
+.search_bar:focus{
+    outline: none;
+}
+
+.search_bar::placeholder {
+    font-size: 11px;
+}
+
+.search_area img {
+    position: absolute;
+    z-index: 1;
+    width: 17px;
+    height: 17px;
+    margin-left: 15px;
+    margin-top: 1px;
+}
+
+.add_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7px;
+    width: 7px;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    padding: 9px;
+    margin-left: 7px;
+    margin-bottom: 3px;
+    margin-top: 4px;
+}
+
+.add_icon img {
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+}
+
+/* position:relative 用做后续的时间location定位*/
+.chats_list {
+    display: flex;
+    align-items: center;
+    position: relative; 
+    background-color: #dedede;
+    height: 68px;
+    width: 262px;
+    margin-top: 14px;
+}
+
+.chats_list img {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    margin-left: 12px;
+}
+
+.chat_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3px;
+}
+
+.chat_text .title {
+    font-size: 13px;
+    color: #000000;
+    margin-bottom: 2px;
+    margin-left: -10px;
+}
+
+.chat_text .subtitle {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 4px;
+    margin-left: -10px;
+}
+
+.chat_time {
+    position: absolute;
+    top:2px;
+    right: 20px;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-right: -5px;
+    color: #adb5bd;
+}
+
+/* 第三部分，已发消息section */
+
+.message_part{
+    display: flex;
+    flex-direction: column;
+    width: 792px;
+    height: 784px;
+}
+
+.message_section{
+    display: flex;
+    width: 100%;
+    height: 65%;
+    flex-direction: column;
+    border-bottom: 2px solid #e2e2e2;
+    background-color: #f3f3f3;
+}
+
+.message_header{
+    display: flex;
+    height: 9%;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #e2e2e2 ;
+}
+
+.message_header h1{
+    font-size: 15px;
+    color: #000000;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.messag_timer{
+    display: flex;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-right: 2px;
+}
+
+.messag_timer span{
+    font-size: 13px;
+    color: #adb5bd;
+}
+
+.previous_message{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 6px;
+    margin-right: 20px;
+}
+
+.chat_box{
+    width: 141px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a9e97b;
+    border-radius: 5%;
+    margin-right: 5px;
+    color: #000000;
+    position: relative;
+}
+
+.previous_chat_text {
+    font-size: 14px;
+}
+
+.small_triangle {
+    position: absolute;
+    z-index: 1;
+    right: -5px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid #a9e97b;
+    border-top: 4px solid transparent; 
+    border-bottom: 4px solid transparent; 
+}
+
+.previous_message img{
+    height: auto;
+    width: 30px;
+    border-radius: 5%;
+    margin-left: 5px;
+}
+
+/*第四部分*/
+.send_message_section{
+    display: flex;
+    background-color: #f3f3f3;
+    width: 791px;
+    height: 326px;
+    flex-direction: column;
+}
+
+.send_message_icons{
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.send_message_icons img{
+    width: 20px; 
+    height: 20px;
+    object-fit: contain;
+}
+
+/*.send_message_chatbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+*/
+
+.text_input {
+    width: 700px;
+    height: 274px;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #000000;
+    background-color: #f3f3f3;
+    border-color: transparent;
+}
+
+/*https://blog.csdn.net/qq_39706777/article/details/120495957*/
+/*用法来自CSDN，不知道为什么border:none无法实现"*/
+.text_input:focus{
+    outline: none;
+}
